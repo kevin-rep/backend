@@ -1,15 +1,17 @@
 package com.grupoasd.prueba.tecnica.controller;
+/**
+ * Clase controlador activo
+ * @author kevin ronderos
+ */
 
-import java.io.Console;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +32,11 @@ public class ActivoController {
 
 	protected ObjectMapper mapper;
 
-	/*
+	/**
 	 * Metodo guardar o actualizar activos
+	 * @author kevin ronderos
+	 * @return true
+	 * 
 	 */
 	@RequestMapping(value = "/saveOrUpdateActivos", method = RequestMethod.POST)
 	public RestResponse saveOrUpdate(@RequestBody String activoJson)
@@ -49,16 +54,21 @@ public class ActivoController {
 
 	}
 
-	/*
+	/**
 	 * Metodo para consultar todos los activos
+	 *  @author kevin ronderos
+	 * @return lista de activos
 	 */
 	@RequestMapping(value = "/getActivos", method = RequestMethod.GET)
 	public List<ActivoDTO> getActivos() {
 		return this.activoService.finAll();
 	}
 
-	/*
-	 * Metodo para consultar por tipo,fecha de compra,serial todos los activos
+	/**
+	 * Metodo para consultar por tipo,serial  activos
+	 * @author kevin ronderos
+	 * @param param valor tipo o serial
+	 * @return lista de activo predeterminada
 	 */
 
 	@RequestMapping(value = "/getActivosByParam/{param}", method = RequestMethod.GET)
@@ -67,16 +77,21 @@ public class ActivoController {
 		ArrayList<ActivoDTO> activo = (ArrayList<ActivoDTO>) getActivos();
 		ArrayList<ActivoDTO> listActivo = new ArrayList<ActivoDTO>();
 		for (ActivoDTO av : activo) {
-			if (av.getTipo().equals(param) || av.getFechaCompra().equals(param) || av.getSerial().equals(param)) {
+			if (av.getTipo().equals(param)  || av.getSerial().equals(param)) {
 				listActivo.add(av);
 				
 			}
 
 		}
-
-//		 return new  List<ActivoDTO>(activo,HttpStatus.OK);
 		return new ArrayList<ActivoDTO>(listActivo);
+		
 	}
+		
+	/**
+	 * Metodo para validar campos nulos
+	 * @author kevin ronderos
+	 * @return true o false
+	 */
 
 	private boolean validate(ActivoDTO activo) {
 

@@ -2,7 +2,7 @@ package com.grupoasd.prueba.tecnica.service;
 
 
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 import com.grupoasd.prueba.tecnica.dao.ActivoRepository;
 import com.grupoasd.prueba.tecnica.model.ActivoDTO;
 
-
+/**
+ * Clase activo servicio implemetacion
+ *  @author kevin ronderos
+ */
 @Service
-
 public class ActivoServiceImpl<string> implements ActivoService {
 	
 	@Autowired

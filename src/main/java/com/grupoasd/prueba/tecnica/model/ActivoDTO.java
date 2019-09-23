@@ -1,5 +1,8 @@
 package com.grupoasd.prueba.tecnica.model;
-
+/**
+ * Clase principal para ActivoDTO
+ *  @author kevin ronderos
+ */
 import java.io.Serializable;
 import java.util.Calendar;
 

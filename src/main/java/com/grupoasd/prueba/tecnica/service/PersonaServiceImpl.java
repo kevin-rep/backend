@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.grupoasd.prueba.tecnica.dao.PersonaRepository;
 import com.grupoasd.prueba.tecnica.model.PersonaDTO;
-
+/**
+ * Clase persona servicio implemetacion
+ *  @author kevin ronderos
+ */
 @Service
 public class PersonaServiceImpl implements PersonaService {
 	@Autowired

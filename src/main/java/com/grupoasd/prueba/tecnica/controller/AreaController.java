@@ -1,5 +1,8 @@
 package com.grupoasd.prueba.tecnica.controller;
-
+/**
+ * Clase controlador area
+ * @author kevin ronderos
+ */
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +22,10 @@ public class AreaController {
 	
 	protected ObjectMapper mapper;
 
-	/*
-	 * Metodo para consultar personas
+	/**
+	 * Metodo para consultar personas de la bse de datos
+	 * @author kevin ronderos
+	 * @return lista de personas
 	 */
 	@RequestMapping(value = "/getArea", method = RequestMethod.GET)
 	public List<AreaDTO> getArea() {

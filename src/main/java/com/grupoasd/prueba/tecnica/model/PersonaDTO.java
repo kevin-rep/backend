@@ -1,5 +1,8 @@
 package com.grupoasd.prueba.tecnica.model;
-
+/**
+ * Clase principal para PersonaDTO
+ *  @author kevin ronderos
+ */
 import java.io.Serializable;
 
 import javax.persistence.Access;

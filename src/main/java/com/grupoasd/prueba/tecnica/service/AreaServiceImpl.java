@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.grupoasd.prueba.tecnica.dao.AreaRepository;
 import com.grupoasd.prueba.tecnica.model.AreaDTO;
-
+/**
+ * Clase area servicio implemetacion
+ *  @author kevin ronderos
+ */
 @Service
 public class AreaServiceImpl implements AreaService {
 	@Autowired
